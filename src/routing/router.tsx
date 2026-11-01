@@ -1,16 +1,16 @@
 import { createBrowserRouter, Navigate } from "react-router";
 
-import MainLayout from "../layouts/MainLayout";
-import AddPetPage from "../pages/AddPetPage/AddPetPage";
-import FriendsPage from "../pages/FriendsPage/FriendsPage";
-import HomePage from "../pages/HomePage/HomePage";
-import LoginPage from "../pages/LoginPage/LoginPage";
-import NewsPage from "../pages/NewsPage/NewsPage";
-import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
-import NoticesPage from "../pages/NoticesPage/NoticesPage";
-import ProfilePage from "../pages/ProfilePage/ProfilePage";
-import RegistrationPage from "../pages/RegistrationPage/RegistrationPage";
-import { routes } from "./routes";
+import MainLayout from "@/layouts/MainLayout";
+import AddPetPage from "@/pages/AddPetPage/AddPetPage";
+import FriendsPage from "@/pages/FriendsPage/FriendsPage";
+import HomePage from "@/pages/HomePage/HomePage";
+import LoginPage from "@/pages/LoginPage/LoginPage";
+import NewsPage from "@/pages/NewsPage/NewsPage";
+import NotFoundPage from "@/pages/NotFoundPage/NotFoundPage";
+import NoticesPage from "@/pages/NoticesPage/NoticesPage";
+import ProfilePage from "@/pages/ProfilePage/ProfilePage";
+import RegistrationPage from "@/pages/RegistrationPage/RegistrationPage";
+import { routes } from "@/routing/routes";
 
 export const router = createBrowserRouter([
 	{
