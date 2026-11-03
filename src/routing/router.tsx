@@ -10,7 +10,10 @@ import NotFoundPage from "@/pages/NotFoundPage/NotFoundPage";
 import NoticesPage from "@/pages/NoticesPage/NoticesPage";
 import ProfilePage from "@/pages/ProfilePage/ProfilePage";
 import RegistrationPage from "@/pages/RegistrationPage/RegistrationPage";
-import { routes } from "@/routing/routes";
+
+import PrivateRoute from "./PrivateRoute";
+import RestrictedRoute from "./RestrictedRoute";
+import { routes } from "./routes";
 
 export const router = createBrowserRouter([
 	{
@@ -22,10 +25,20 @@ export const router = createBrowserRouter([
 			{ path: routes.NEWS, element: <NewsPage /> },
 			{ path: routes.NOTICES, element: <NoticesPage /> },
 			{ path: routes.FRIENDS, element: <FriendsPage /> },
-			{ path: routes.ADD_PET, element: <AddPetPage /> },
-			{ path: routes.PROFILE, element: <ProfilePage /> },
-			{ path: routes.REGISTER, element: <RegistrationPage /> },
-			{ path: routes.LOGIN, element: <LoginPage /> },
+			{
+				element: <RestrictedRoute />,
+				children: [
+					{ path: routes.LOGIN, element: <LoginPage /> },
+					{ path: routes.REGISTER, element: <RegistrationPage /> },
+				],
+			},
+			{
+				element: <PrivateRoute />,
+				children: [
+					{ path: routes.ADD_PET, element: <AddPetPage /> },
+					{ path: routes.PROFILE, element: <ProfilePage /> },
+				],
+			},
 			{ path: "*", element: <NotFoundPage /> },
 		],
 	},
