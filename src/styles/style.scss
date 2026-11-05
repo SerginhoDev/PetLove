@@ -1,0 +1,7 @@
+@use "./fonts";
+@use "./variables" as *;
+
+body {
+	font-family: "Manrope", sans-serif;
+	font-weight: $fw-medium;
+}
